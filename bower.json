@@ -1,6 +1,6 @@
 {
   "name": "angular-ui-slider",
-  "version": "0.1.10",
+  "version": "0.1.11",
   "description": "This directive allows you to add a slider.",
   "author": "https://github.com/angular-ui/ui-slider/graphs/contributors",
   "license": "MIT",

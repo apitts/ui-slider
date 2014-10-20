@@ -62,7 +62,7 @@
             tElement.addClass('ui-slider-default');
             tElement.append(
               // Use a virtual scope key to allow
-              '<ui-slider-thumb ng-model="__' + Math.random().toString(36).substring(7) + '"></ui-slider-thumb>'
+                '<ui-slider-thumb ng-model="__' + Math.random().toString(36).substring(7) + '"></ui-slider-thumb>'
             );
           }
 
@@ -80,8 +80,8 @@
 
             // Observe the max attr (default 100)
             iAttrs.$observe('max', function (newVal) {
-              controller.max = +newVal;
-              controller.max = !isNaN(controller.max) ? controller.max : 100;
+              controller.max = newVal;
+              controller.max = controller.max ? controller.max : 100;
               scope.$broadcast('global max changed');
             });
 
@@ -207,8 +207,8 @@
           // Observe the max attr (default 100)
           iAttrs.$observe('max', function observeMax(newVal) {
             var oldVal = _cache.max;
-            _cache.max = +newVal;
-            _cache.max = !isNaN(_cache.max) ? _cache.max : 100;
+            _cache.max = newVal;
+            _cache.max = _cache.max ? _cache.max : 100;
 
             updateIfChanged(_cache.max, oldVal);
           });
@@ -217,7 +217,7 @@
 
             _cache.max = (angular.isDefined(iAttrs.max)) ? _cache.max : uiSliderCtrl.max;
             // Secure no NaN here...
-            _cache.max = !isNaN(_cache.max) ? _cache.max : 100;
+            _cache.max = _cache.max ? _cache.max : 100;
 
             updateIfChanged(_cache.max, oldVal);
           });
